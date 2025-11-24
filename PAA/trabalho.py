@@ -1,5 +1,6 @@
 import itertools
 import time
+import os
 import matplotlib.pyplot as plt
 import matplotlib.patches as patches
 
@@ -200,7 +201,9 @@ def desenhar_solucao(placas, titulo="Solução"):
     plt.show()
 
 def main():
-    pecas = ler_entrada("entrada2.txt")
+    script_dir = os.path.dirname(os.path.abspath(__file__))
+    caminho_entrada = os.path.join(script_dir, "entrada3.txt")
+    pecas = ler_entrada(caminho_entrada)
     print(f"Número de peças: {len(pecas)}")
     #força bruta funcionando apenas para poucos itens <=8
     if len(pecas) <= 8:
